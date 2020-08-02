@@ -30,6 +30,12 @@
     width: 0px;
 }
 
+@media only screen and (max-width: 750px) {
+    .note-list-items-w{
+        width: 100%;
+    }
+}
+
 .note-list-main{
     box-sizing: border-box;
     direction: ltr;
@@ -40,6 +46,12 @@
     overflow: hidden;
 }
 
+@media only screen and (max-width: 750px) {
+    .note-list-main{
+        width: 100%;
+    }
+}
+
 .note-list-main-w{
     width: auto;
     height: 100%;
@@ -47,6 +59,13 @@
     max-height: 236px;
     overflow: hidden;
     position: relative;
+}
+
+@media only screen and (max-width: 750px) {
+    .note-list-main-w{
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .note-list-item {
