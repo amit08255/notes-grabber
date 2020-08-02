@@ -1,0 +1,121 @@
+.note-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+    background: inherit;
+}
+
+.note-list.is-empty {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.note-list-items {
+    flex: 1 1 auto;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+.note-list-items div:focus {
+    outline: none;
+}
+
+.note-list-items-w{
+    overflow: visible;
+    height: 0px;
+    width: 0px;
+}
+
+.note-list-main{
+    box-sizing: border-box;
+    direction: ltr;
+    height: auto;
+    position: relative;
+    width: 328px;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.note-list-main-w{
+    width: auto;
+    height: 100%;
+    max-width: 328px;
+    max-height: 236px;
+    overflow: hidden;
+    position: relative;
+}
+
+.note-list-item {
+    cursor: pointer;
+    display: flex;
+    padding-left: 8px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.note-item{
+    height: auto;
+    left: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.note-list-item .note-list-item-pinner {
+    flex: none;
+    height: 14px;
+    width: 14px;
+    margin-right: 8px;
+    margin-top: 14px;
+    border-radius: 50%;
+}
+.note-list-item .note-list-item-pinner:focus {
+    outline: none;
+}
+.note-list-item:hover .note-list-item-pinner {
+    box-shadow: inset 0 0 0 2px #c3c4c7, inset 0 0 0 3px #fff;
+}
+.note-list-item:hover .note-list-item-pinner:hover {
+    background: #646970;
+}
+.note-list-item.note-list-item-pinned .note-list-item-pinner {
+    background: #2c3338;
+    box-shadow: inset 0 0 0 2px #dcdcde, inset 0 0 0 3px #fff;
+}
+.note-list-item.note-list-item-pinned .note-list-item-pinner:hover {
+    background: #c3c4c7;
+}
+
+.note-list-item .note-list-item-text {
+    flex: 1 1 auto;
+    overflow: hidden;
+    padding: 9px 0;
+    border-bottom: 1px solid #dcdcde;
+}
+.note-list-item .note-list-item-text:focus {
+    outline: none;
+}
+.note-list-item .note-list-item-title,
+.note-list-item .note-list-item-excerpt {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.note-list-item.note-list-item-selected {
+    background: #ced9f2;
+}
+
+.note-list-item .note-list-item-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.note-list-item .note-list-item-title span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.note-list-item .note-list-item-excerpt {
+    color: #2c3338;
+}
