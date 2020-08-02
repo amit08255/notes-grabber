@@ -16,14 +16,29 @@ function App() {
 
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const getNotesList = () => {
+  const searchNotes = (notes, search) => {
+
+      if(search.length < 1){
+          return true;
+      }
+
+      const lowTitle = notes.title.toLowerCase();
+      const lowContent = notes.summary.toLowerCase();
+      const lowQuery = search.toLowerCase();
+
+      return lowTitle.indexOf(lowQuery)>=0 || lowContent.indexOf(lowQuery) >= 0;
+  }
+
+  const getNotesList = (search = "") => {
       const notesList = getJsonData();
 
       if(isValidArray(notesList) !== true){
           return;
       }
 
-      setNotesList(notesList);
+      const filteredNotes = notesList.filter((n) => searchNotes(n, search));
+
+      setNotesList(filteredNotes);
   }
 
   useEffect(() => {  
@@ -91,6 +106,10 @@ function App() {
     updateNotesList(notesList);
   }
 
+  const onFilterNotes = (e) => {
+      getNotesList(e.target.value);
+  }
+
   return (
     <div className="app-wrapper">
       <div className="app-inner">
@@ -98,6 +117,7 @@ function App() {
           <Sidebar show={showSidebar}>
             <SearchBar
               onNewNotesClick={addNewNotes}
+              onSearch={onFilterNotes}
             />
             <NotesListContainer 
                 notesList={notesList}

@@ -14,6 +14,7 @@ export const NotesListContainer = ({notesList, selectedNotes, onNotesSelect}) =>
                 notesList.map((notes, index) => (
                     <NotesListItem 
                         key={`notes-list-${index}`}
+                        itemKey={`notes-list-${index}`}
                         title={notes.title}
                         summary={notes.summary}
                         onClick={() => onNotesSelect(index)}
