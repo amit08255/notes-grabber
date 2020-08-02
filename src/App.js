@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {storeJsonData, getJsonData, isValidArray, isValidValue} from './utils/storage';
-import Sidebar from './components/sidebar';
+import {Sidebar} from './components/sidebar';
 import {SearchBar} from './components/search-bar';
-import Note from './components/note';
+import {Note} from './components/note';
 import {NotesToolbar} from './components/note-toolbar';
 import {NotesEditor} from './components/note-editor';
 import {NotesListContainer} from './containers/notes-list';
