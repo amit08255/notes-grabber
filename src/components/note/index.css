@@ -15,8 +15,10 @@
         height: 100%;
         top: 0;
         left: 0;
-        opacity: 0;
-        z-index: -1;
         transition: all 200ms ease-in-out;
+    }
+
+    .hide-column{
+        display: none;
     }
 }

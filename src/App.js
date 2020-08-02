@@ -14,6 +14,8 @@ function App() {
 
   const [notesIndex, setNotesIndex] = useState(0);
 
+  const [showSidebar, setShowSidebar] = useState(false);
+
   const getNotesList = () => {
       const notesList = getJsonData();
 
@@ -28,6 +30,9 @@ function App() {
       getNotesList();
   }, []);
 
+  const toggleSidebar = () => {
+      setShowSidebar(!showSidebar);
+  }
 
   const updateNotesList = (notesList) => {
       storeJsonData(notesList);
@@ -41,6 +46,7 @@ function App() {
 
   const onNotesSelect = (index) => {
       setNotesIndex(index);
+      setShowSidebar(false);
   }
 
   const getSelectedNotesTitle = () => {
@@ -89,7 +95,7 @@ function App() {
     <div className="app-wrapper">
       <div className="app-inner">
         <div className="app-layout">
-          <Sidebar>
+          <Sidebar show={showSidebar}>
             <SearchBar
               onNewNotesClick={addNewNotes}
             />
@@ -99,10 +105,11 @@ function App() {
                 selectedNotes={notesIndex}
             />
           </Sidebar>
-          <Note>
+          <Note show={!showSidebar}>
             <NotesToolbar 
               title={getSelectedNotesTitle()}
               onTitleChange={onTitleChange}
+              onGoButtonClick={toggleSidebar}
             />
             <NotesEditor 
               content={getSelectedNotesContent()}

@@ -26,4 +26,8 @@
         opacity: 1;
         pointer-events: auto;
     }
+
+    .app-sidebar-column.hide-sidebar {
+        display: none;
+    }
   }
