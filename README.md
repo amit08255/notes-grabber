@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NotesGrabber
+
+This is simple note taking app designed in ReactJS. It store created notes in localstorage and allows user to update and search notes.
 
 ## Available Scripts
 
