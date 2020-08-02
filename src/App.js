@@ -23,10 +23,9 @@ function App() {
       }
 
       const lowTitle = notes.title.toLowerCase();
-      const lowContent = notes.summary.toLowerCase();
       const lowQuery = search.toLowerCase();
 
-      return lowTitle.indexOf(lowQuery)>=0 || lowContent.indexOf(lowQuery) >= 0;
+      return lowTitle.indexOf(lowQuery)>=0;
   }
 
   const getNotesList = (search = "") => {
