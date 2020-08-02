@@ -1,18 +1,18 @@
 import React from 'react';
 import './index.css';
 
-function App() {
+export const NotesEditor = ({content, onNotesChange}) => {
   return (
     <div className="note-editor border-grey">
       <div className="note-detail-wrapper">
         <div className="note-detail">
-          <textarea className="note-content">
-            
-          </textarea>
+          <textarea 
+            className="note-content" 
+            onChange={onNotesChange}
+            value={content}
+          />
         </div>
       </div>
     </div>
   );
 }
-
-export default App;

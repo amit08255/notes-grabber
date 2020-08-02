@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-function App() {
+export const NotesToolbar = ({title, onTitleChange}) => {
   return (
     <div className="note-toolbar-wrapper border-grey">
       <div className="note-toolbar__column-right">
@@ -12,12 +12,13 @@ function App() {
             </svg>
           </button>
         </div>
-        <span className="note-toolbar__title">
-          Simple Notes Title Here
-        </span>
+        <input 
+          className="note-toolbar__title" 
+          value={title}
+          onChange={onTitleChange}
+        />
       </div>
     </div>
   );
 }
 
-export default App;
