@@ -1,0 +1,43 @@
+.note-toolbar-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex: none;
+    height: 56px;
+    border-bottom: 1px solid #dcdcde;
+}
+.note-toolbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.note-toolbar__column-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.note-toolbar__button {
+    flex: none;
+    margin-right: 14px;
+    text-align: center;
+}
+.note-toolbar__button:last-child {
+    margin-right: 0;
+}
+.note-toolbar-back {
+    display: none;
+}
+@media only screen and (max-width: 750px) {
+    .note-toolbar-back {
+        display: flex;
+    }
+}
+
+.note-toolbar__title {
+    font-size: 16px;
+    padding-left: 15px;
+    font-weight: bold;
+    display: flex;
+}
